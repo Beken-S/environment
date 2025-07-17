@@ -9,7 +9,7 @@
             disko.nixosModules.disko
             {
                 disko.devices = import ./disko-config.nix;
-            };
+            }
         ];
     };
 }

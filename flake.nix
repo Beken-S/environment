@@ -4,12 +4,15 @@
     inputs.disko.inputs.nixpkgs.follows = "nixpkgs";
 
     outputs = { self, disko, nixpkgs }: {
-        nixosConfigurations.mymachine = nixpkgs.lib.nixosSystem [
-            ./configuration.nix
-            disko.nixosModules.disko
-            {
-                disko.devices = import ./disko-config.nix;
-            }
-        ];
+        nixosConfigurations.mymachine = nixpkgs.lib.nixosSystem {
+            system = "x86_64-linux";
+            modules = [
+                ./configuration.nix
+                disko.nixosModules.disko
+                {
+                    disko.devices = import ./disko-config.nix;
+                }
+            ];
+        } 
     };
 }

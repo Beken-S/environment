@@ -13,6 +13,6 @@
                     disko.devices = import ./disko-config.nix;
                 }
             ];
-        } 
+        };
     };
 }

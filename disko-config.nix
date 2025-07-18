@@ -3,7 +3,7 @@
         disk = {
             main = {
                 type = "disk";
-                device = "/dev/disk/by-id/some-disk-id";
+                device = builtins.getEnv "DISKO_DISK";
                 content = {
                     type = "gpt";
                     partitions = {

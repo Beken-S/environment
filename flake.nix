@@ -8,9 +8,7 @@
             system = "x86_64-linux";
             modules = [
                 disko.nixosModules.disko
-                {
-                    disko.devices = import ./disko-config.nix;
-                }
+                ./disko-config.nix;
             ];
         };
     };
